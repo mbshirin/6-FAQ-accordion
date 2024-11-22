@@ -1,0 +1,106 @@
+body {
+    background-color: hsl(275, 100%, 97%) !important;
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.container {
+    background-color: white;
+    border-radius: 1rem;
+    margin: 12% auto;
+    padding: 2rem !important;
+    max-width: 40% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .title {
+    font-size: 4rem;
+    color: hsl(292, 42%, 14%);
+    font-weight: bold;
+    position: relative;
+    padding-left: 6rem;
+}
+
+.container .title::before {
+    content: "";
+    background-image: url(./assets/images/icon-star.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 85%;
+    width: 12%;
+    right: 83%;
+    top: 24%;
+    background-size: 3rem;
+}
+
+.container .item button {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 1rem;
+    padding: 1em 0;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.container .item button p {
+    margin: 0;
+    transition: all .3s ease;
+    color: hsl(292, 42%, 14%);
+}
+
+.container .item button p:hover {
+    color: #ad28eb;
+}
+
+.container .item button .icon {
+    background-image: url(./assets/images/icon-plus.svg);
+    background-repeat: no-repeat;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-size: contain;
+}
+
+.item button.active .icon {
+    background-image: url(./assets/images/icon-minus.svg);
+}
+
+.container .content {
+    color: hsl(292, 16%, 49%);
+    max-height: 0;
+    overflow: hidden; 
+    transition: max-height 0.3s ease-out; 
+}
+
+@media screen and (max-width:767px) {
+    body {
+        background-image: url(./assets/images/background-pattern-mobile.svg);
+    }
+
+    .container {
+        max-width: 93% !important;
+        margin: 28% auto;
+    }
+
+    .container .title {
+        font-size: 2.5rem;
+        padding-left: 4rem;
+    }
+
+    .container .title::before {
+        width: 17%;
+        background-size: 2.5rem;
+    }
+
+    .container .item button p {
+        font-size: 0.75rem;
+    }
+
+    .container .item button .icon {
+        background-size: 1.5rem;
+        width: 2.5rem;
+    }
+}
